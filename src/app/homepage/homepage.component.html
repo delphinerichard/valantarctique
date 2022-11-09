@@ -20,14 +20,14 @@
 		<mat-card class="example-card">
 			<mat-card-header>
 				<mat-card-title>Qui suis-je ?</mat-card-title>
-				<!-- <mat-card-subtitle>Pour connaître mon parcours...</mat-card-subtitle> -->
+				<mat-card-subtitle>Pour connaître mon parcours...</mat-card-subtitle>
 			</mat-card-header>
 			<img mat-card-image src="assets/img1.jpg" alt="Photo of a pingu" />
-			<mat-card-content>
-				<p>Pour connaître mon parcours...</p>
-			</mat-card-content>
 			<mat-card-actions>
-				<button mat-button>EN SAVOIR PLUS</button>
+				<button mat-stroked-button class="homepage-button">
+					EN SAVOIR PLUS
+					<mat-icon>chevron_right</mat-icon>
+				</button>
 			</mat-card-actions>
 		</mat-card>
 
@@ -47,11 +47,49 @@
 				</p> -->
 			</mat-card-content>
 			<mat-card-actions>
-				<button mat-button>C'est par ici !</button>
+				<button mat-stroked-button class="homepage-button">
+					EN SAVOIR PLUS
+					<mat-icon>chevron_right</mat-icon>
+				</button>
 			</mat-card-actions>
 		</mat-card>
 	</div>
 
+	<h2>Les dernières nouvelles</h2>
+	<div class="card-container">
+		<mat-card class="example-card">
+			<mat-card-header>
+				<mat-card-title>Voyage: partie 1</mat-card-title>
+				<!-- <mat-card-subtitle>Pour connaître mon parcours...</mat-card-subtitle> -->
+			</mat-card-header>
+			<img
+				mat-card-image
+				style="height: 100%"
+				src="assets/img3.jpeg"
+				alt="Photo of a Valentin" />
+			<mat-card-content>
+				<p></p>
+			</mat-card-content>
+			<mat-card-actions>
+				<button mat-stroked-button class="homepage-button">
+					EN SAVOIR PLUS
+					<mat-icon>chevron_right</mat-icon>
+				</button>
+			</mat-card-actions>
+		</mat-card>
+
+		<mat-card class="example-card">
+			<mat-card-header>
+				<mat-card-title>Evolution, épisode 1</mat-card-title>
+			</mat-card-header>
+			<mat-card-actions>
+				<button mat-stroked-button class="homepage-button">
+					EN SAVOIR PLUS
+					<mat-icon>chevron_right</mat-icon>
+				</button>
+			</mat-card-actions>
+		</mat-card>
+	</div>
 	<!-- Resources -->
 	<h2>Resources</h2>
 	<p>Here are some links to help you get started:</p>
