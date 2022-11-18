@@ -1,25 +1,26 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { HomepageComponent } from './homepage/homepage.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { HomepageComponent } from "./homepage/homepage.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
 
 const routes: Routes = [
-  {
-    path: '',
-    component: HomepageComponent,
-  },
-  {
-    path: 'admin/dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: '**',
-    redirectTo: ''
-  },
+	{
+		path: "",
+		component: HomepageComponent,
+	},
+	{
+		path: "admin/dashboard",
+		component: DashboardComponent,
+		// canActivate: [AuthGuard]
+	},
+	{
+		path: "**",
+		redirectTo: "",
+	},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

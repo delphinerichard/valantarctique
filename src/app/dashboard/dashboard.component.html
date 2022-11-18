@@ -1,5 +1,19 @@
 <app-toolbar></app-toolbar>
 
-<div class="content" role="main">
-    <h1>Bienvenue sur le dashboard admin</h1>
+<div
+	class="content"
+	role="main"
+	*ngIf="auth.user$ | async as user; else loggedOut">
+	<h1>Bienvenue sur le dashboard admin</h1>
+	<p>Email: {{ user.email }}</p>
 </div>
+
+<ng-template #loggedOut>
+	<app-toolbar></app-toolbar>
+	<div class="content" role="main">
+		<a>Vous devez être connecté·e pour accéder à cette page</a>
+		<a mat-flat-button class="login-button" (click)="auth.loginWithRedirect()"
+			>Me connecter</a
+		>
+	</div>
+</ng-template>

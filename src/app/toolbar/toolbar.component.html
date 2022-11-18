@@ -4,7 +4,10 @@
 		<img alt="Valantarctique Logo" src="assets/valantarctique_logo.png"
 	/></a>
 	<div class="spacer"></div>
-	<a mat-flat-button class="toolbar-button" href="/">Me connecter</a>
+
+	<a mat-flat-button class="toolbar-button" (click)="auth.loginWithRedirect()"
+		>Me connecter</a
+	>
 	<a mat-flat-button class="toolbar-button" href="/">M'inscrire</a>
 	<a mat-flat-button class="toolbar-button" href="admin/dashboard">Admin</a>
 </mat-toolbar>

@@ -2,16 +2,19 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 
 import { AppComponent } from "./app.component";
+import { AppRoutingModule } from "./app-routing.module";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HomepageComponent } from "./homepage/homepage.component";
 import { ToolbarComponent } from "./toolbar/toolbar.component";
-import { MatSliderModule } from "@angular/material/slider";
-import { MatButtonModule } from "@angular/material/button";
 import { DashboardComponent } from "./dashboard/dashboard.component";
-import { AppRoutingModule } from "./app-routing.module";
+import { AuthButtonComponent } from "./auth/services/auth-button.component";
+
+import { MatButtonModule } from "@angular/material/button";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
-import { MatCard, MatCardModule } from "@angular/material/card";
+import { MatCardModule } from "@angular/material/card";
+
+import { AuthModule } from "@auth0/auth0-angular";
 
 @NgModule({
 	declarations: [
@@ -19,6 +22,7 @@ import { MatCard, MatCardModule } from "@angular/material/card";
 		HomepageComponent,
 		ToolbarComponent,
 		DashboardComponent,
+		AuthButtonComponent,
 	],
 	imports: [
 		AppRoutingModule,
@@ -28,6 +32,10 @@ import { MatCard, MatCardModule } from "@angular/material/card";
 		MatToolbarModule,
 		MatIconModule,
 		MatCardModule,
+		AuthModule.forRoot({
+			domain: "dev-gfb1q8bbhz7br08r.us.auth0.com",
+			clientId: "sIHSEXYJmLc2PGLRbqxLr0Vme7SOvWEG",
+		}),
 	],
 	providers: [],
 	bootstrap: [AppComponent],
