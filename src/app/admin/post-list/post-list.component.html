@@ -1,0 +1,22 @@
+<div class="content">
+
+    <div class="card-container">
+        
+        <ng-container *ngFor="let post of postList">
+            <mat-card class="post-card">
+                <mat-card-header>
+                    <mat-card-title>{{post.title}}</mat-card-title>
+                    <mat-card-subtitle>{{post.updated | date: 'dd MMMM yyyy'}}</mat-card-subtitle>
+                </mat-card-header>
+                <img mat-card-image src="assets/img1.jpg" alt="Photo of a pingu" />
+                <mat-card-content>
+                    <p>{{post.content}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-button class="post-button">EN SAVOIR PLUS</button>
+                    <button mat-button class="post-button">Modifier</button>
+                </mat-card-actions>
+            </mat-card>
+        </ng-container>
+    </div>
+</div>

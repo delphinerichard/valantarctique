@@ -1,13 +1,39 @@
 <!-- Toolbar -->
-<mat-toolbar class="toolbar">
+<!-- <mat-toolbar class="toolbar">
 	<a href="/">
 		<img alt="Valantarctique Logo" src="assets/valantarctique_logo.png"
 	/></a>
 	<div class="spacer"></div>
 
-	<a mat-flat-button class="toolbar-button" (click)="auth.loginWithRedirect()"
+	<a *ngIf="!authenticated" mat-flat-button class="toolbar-button" (click)="auth.loginWithRedirect()"
 		>Me connecter</a
 	>
-	<a mat-flat-button class="toolbar-button" href="/">M'inscrire</a>
-	<a mat-flat-button class="toolbar-button" href="admin/dashboard">Admin</a>
-</mat-toolbar>
+
+	<a *ngIf="authenticated" mat-flat-button class="toolbar-button" (click)="auth.logout({ returnTo: document.location.origin })">Déconnexion</a>
+	<a  *ngIf="authenticated" mat-flat-button class="toolbar-button" href="admin/dashboard">Admin</a>
+</mat-toolbar> -->
+
+
+<ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+	<mat-toolbar class="toolbar">
+		<a href="/">
+			<img alt="Valantarctique Logo" src="assets/valantarctique_logo.png"
+		/></a>
+		<div class="spacer"></div>	
+		<a mat-flat-button class="toolbar-button" (click)="auth.logout({ returnTo: document.location.origin })">Déconnexion</a>
+		<a mat-flat-button class="toolbar-button" href="admin/dashboard">Admin</a>
+	</mat-toolbar>
+  </ng-container>
+
+  <ng-template #loggedOut>
+	<mat-toolbar class="toolbar">
+		<a href="/">
+			<img alt="Valantarctique Logo" src="assets/valantarctique_logo.png"
+		/></a>
+		<div class="spacer"></div>
+	
+		<a mat-flat-button class="toolbar-button" (click)="auth.loginWithRedirect()"
+			>Me connecter</a
+		>
+	</mat-toolbar>
+  </ng-template>
