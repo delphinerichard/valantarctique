@@ -1,4 +1,4 @@
-@import "/src/colors.scss"; 
+@import "/src/colors.scss";
 
 :host {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
@@ -34,7 +34,6 @@ p {
 	flex-direction: column;
 	align-items: center;
 }
-
 
 .card svg.material-icons path {
 	fill: #888;
@@ -120,4 +119,5 @@ a:hover {
 .post-button {
 	margin-left: 10px;
 	color: $primary;
+	background-color: $background-color;
 }
