@@ -8,6 +8,7 @@ import {
 	getDocs,
 	Firestore,
 } from "firebase/firestore/lite";
+import { getAuth, signInAnonymously } from "firebase/auth";
 
 export interface Post {
 	id: number;
@@ -35,6 +36,8 @@ export class PostListComponent implements OnInit {
 
 	// Get a list of posts from your database
 	async getPosts(db: Firestore): Promise<Post[]> {
+		const auth = getAuth();
+		await signInAnonymously(auth);
 		const postsCol = collection(db, "posts");
 		const postSnapshot = await getDocs(postsCol);
 		let postList = postSnapshot.docs.map((doc) => doc.data());
